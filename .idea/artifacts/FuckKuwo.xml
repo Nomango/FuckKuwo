@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="FuckKuwo">
+    <output-path>$PROJECT_DIR$/out/</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="cn.nomango.FuckKuwo.Main" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="FuckKuwo" />
+        <option name="vendor" value="" />
+        <option name="version" value="0.9" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="FuckKuwo.jar">
+        <element id="module-output" name="FuckKuwo" />
+      </element>
+    </root>
+  </artifact>
+</component>
