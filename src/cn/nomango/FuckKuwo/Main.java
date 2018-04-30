@@ -13,6 +13,8 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("view/layout.fxml"));
         primaryStage.setTitle("Fuck Kuwo");
         primaryStage.setScene(new Scene(root));
+        primaryStage.setMinWidth(550);
+        primaryStage.setMinHeight(520);
         primaryStage.show();
     }
 

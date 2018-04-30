@@ -20,8 +20,6 @@ public class Controller {
     @FXML
     private Button btnDecrypt;
 
-    private static final String HOST = "http://comment.kuwo.cn/com.s?f=ar&q=";
-
     public void initialize() {
     }
 
@@ -32,7 +30,7 @@ public class Controller {
             byte[] encryptParameters = KuwoDES.encryptKSing(data, key);
             String b64Params = new String(Base64Coder.encode(encryptParameters, encryptParameters.length));
 
-            txtResult.setText(HOST + b64Params);
+            txtResult.setText(b64Params);
         } catch (Exception e) {
             txtResult.setText(e.getMessage());
         }
@@ -41,8 +39,9 @@ public class Controller {
     public void onBtnDecryptClick() {
         try {
             byte[] b64Data = Base64Coder.decode(txtData.getText());
-            String key = txtKey.getText();
-            String str = new String((KuwoDES.decryptKSing(b64Data, key.getBytes()))).trim();
+            byte[] key = txtKey.getText().getBytes();
+            String str = new String((KuwoDES.decryptKSing(b64Data, key))).trim();
+
             txtResult.setText(str);
         } catch (Exception e) {
             txtResult.setText(e.getMessage());
